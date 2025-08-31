@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Braora — Usability & Design Agency</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ["Inter", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", "Helvetica Neue", "Arial", "sans-serif"],
+            serif: ["DM Serif Display", "Georgia", "serif"],
+          },
+          colors: { brand: { DEFAULT: "#111827", accent: "#A7F3D0" } },
+          keyframes: { marquee: { from: { transform: 'translateX(0)' }, to: { transform: 'translateX(-50%)' } } },
+          animation: { marquee: 'marquee 30s linear infinite' }
+        }
+      },
+      darkMode: 'class'
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .link-underline{background:linear-gradient(currentColor,currentColor) no-repeat;background-size:0 2px;background-position:0 100%;transition:background-size .3s ease}
+    .link-underline:hover{background-size:100% 2px}
+    .card-media video,.card-media img{transition:transform .6s cubic-bezier(.2,.6,.2,1),opacity .6s}
+    .card:hover .card-media video{transform:scale(1.05);opacity:1}
+    .card:hover .card-media img{transform:scale(1.05);opacity:.7}
+  </style>
+</head>
+<body class="bg-white text-brand dark:bg-black dark:text-white font-display">
+  <!-- Sticky top nav -->
+  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-black/40 border-b border-black/5 dark:border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="#" class="flex items-center">
+        <img src="assets/braora.png" alt="Braora Logo" class="h-14 w-auto" />
+      </a>
+      <nav class="hidden md:flex gap-8 text-sm">
+        <a class="opacity-80 hover:opacity-100" href="#work">Work</a>
+        <a class="opacity-80 hover:opacity-100" href="#services">Services</a>
+        <a class="opacity-80 hover:opacity-100" href="#process">Process</a>
+        <a class="opacity-80 hover:opacity-100" href="#about">About</a>
+        <a class="opacity-80 hover:opacity-100" href="#insights">Insights</a>
+        <a class="opacity-80 hover:opacity-100" href="#planner">Planner</a>
+        <a class="opacity-80 hover:opacity-100" href="#contact">Contact</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="themeToggle" class="w-9 h-9 rounded-full border border-black/10 dark:border-white/15 grid place-items-center" aria-label="Toggle dark mode">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke-width="1.5"/></svg>
+        </button>
+        <a href="#planner" class="hidden sm:inline-flex items-center gap-2 rounded-full border border-black/10 dark:border-white/15 px-4 py-2 text-sm hover:shadow-sm">Start a project <span aria-hidden>↗</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero full height -->
+  <section class="relative w-full h-screen max-w-none">
+    <div class="absolute inset-0 rounded-none md:rounded-[48px] overflow-hidden shadow-xl ring-1 ring-black/10 dark:ring-white/10">
+      <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1501877008226-4fca48ee50c1?q=80&w=1600&auto=format&fit=crop">
+        <source src="https://cdn.coverr.co/videos/coverr-lights-of-the-city-8947/1080p.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="absolute left-4 sm:left-10 top-8 sm:top-14 max-w-xl">
+      <div class="bg-black/90 text-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8">
+        <div class="text-xs sm:text-sm opacity-80 mb-2">Hiya, we’re <span class="font-semibold">Braora</span> 👋</div>
+        <h1 class="font-serif leading-tight text-2xl sm:text-4xl md:text-5xl">A usability & design agency helping brands craft better digital experiences</h1>
+        <div class="mt-4 flex gap-2 sm:gap-3">
+          <a href="#work" class="inline-flex items-center gap-2 rounded-full bg-white text-black px-4 py-2 text-xs sm:text-sm">View our work <span aria-hidden>↗</span></a>
+          <a href="#about" class="inline-flex items-center gap-2 rounded-full bg-white/10 text-white border border-white/15 px-4 py-2 text-xs sm:text-sm">Meet the team <span aria-hidden>↗</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 text-xs sm:text-sm flex items-center gap-4 bg-black/60 text-white rounded-full px-3 py-1.5 backdrop-blur">
+      <button aria-label="Prev" class="opacity-80 hover:opacity-100">‹</button>
+      <span class="tabular-nums">01 / 10</span>
+      <button aria-label="Next" class="opacity-80 hover:opacity-100">›</button>
+    </div>
+  </section>
+
+  <!-- Clients marquee -->
+  <section aria-label="Clients" class="border-y border-black/5 dark:border-white/10 py-6 select-none">
+    <div class="overflow-hidden">
+      <div class="flex gap-16 whitespace-nowrap animate-marquee will-change-transform">
+        <div class="flex items-center gap-16 pr-16"><span class="text-sm opacity-70">Trusted by</span><span class="text-xl font-semibold">Arcadia</span><span class="text-xl font-semibold">Nimbus Health</span><span class="text-xl font-semibold">Velora</span><span class="text-xl font-semibold">Hearth</span><span class="text-xl font-semibold">OneLab</span></div>
+        <div class="flex items-center gap-16 pr-16" aria-hidden="true"><span class="text-sm opacity-70">Trusted by</span><span class="text-xl font-semibold">Arcadia</span><span class="text-xl font-semibold">Nimbus Health</span><span class="text-xl font-semibold">Velora</span><span class="text-xl font-semibold">Hearth</span><span class="text-xl font-semibold">OneLab</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured work grid -->
+  <section id="work" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+    <div class="flex items-end justify-between mb-8"><h2 class="text-2xl sm:text-3xl font-semibold">Featured work</h2><a href="#" class="text-sm link-underline">View all projects</a></div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="card group rounded-2xl overflow-hidden border border-black/10 dark:border-white/10"><div class="card-media relative aspect-[4/3] bg-neutral-100 dark:bg-neutral-900"><img src="https://images.unsplash.com/photo-1526481280698-8fcc13fd4be8?q=80&w=1200&auto=format&fit=crop" alt="Project cover" class="absolute inset-0 w-full h-full object-cover" /><video muted loop preload="metadata" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100" src="https://cdn.coverr.co/videos/coverr-a-city-drive-3271/1080p.mp4"></video></div><div class="p-5 sm:p-6"><div class="flex items-center justify-between"><h3 class="font-medium">City Foods</h3><span class="text-xs rounded-full border px-2 py-1 opacity-70">eCommerce</span></div><p class="mt-2 text-sm opacity-80">Replatform and redesign to scale DTC revenue.</p></div></article>
+      <article class="card group rounded-2xl overflow-hidden border border-black/10 dark:border-white/10"><div class="card-media relative aspect-[4/3] bg-neutral-100 dark:bg-neutral-900"><img src="https://images.unsplash.com/photo-1520975603465-877f9fdbfdbb?q=80&w=1200&auto=format&fit=crop" alt="Project cover" class="absolute inset-0 w-full h-full object-cover" /><video muted loop preload="metadata" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100" src="https://cdn.coverr.co/videos/coverr-lights-of-the-city-8947/1080p.mp4"></video></div><div class="p-5 sm:p-6"><div class="flex items-center justify-between"><h3 class="font-medium">Neville Group</h3><span class="text-xs rounded-full border px-2 py-1 opacity-70">Personal Brand</span></div><p class="mt-2 text-sm opacity-80">Modular content system with motion.</p></div></article>
+      <article class="card group rounded-2xl overflow-hidden border border-black/10 dark:border-white/10"><div class="card-media relative aspect-[4/3] bg-neutral-100 dark:bg-neutral-900"><img src="https://images.unsplash.com/photo-1496302662116-35cc4f36df92?q=80&w=1200&auto=format&fit=crop" alt="Project cover" class="absolute inset-0 w-full h-full object-cover" /><video muted loop preload="metadata" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100" src="https://cdn.coverr.co/videos/coverr-sunrise-timelapse-2004/1080p.mp4"></video></div><div class="p-5 sm:p-6"><div class="flex items-center justify-between"><h3 class="font-medium">Unfold Labs</h3><span class="text-xs rounded-full border px-2 py-1 opacity-70">SaaS</span></div><p class="mt-2 text-sm opacity-80">Brand refresh and high-contrast UI.</p></div></article>
+    </div>
+  </section>
+
+  <!-- What we do / services -->
+  <section id="services" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-black/5 dark:border-white/10">
+    <div class="grid md:grid-cols-3 gap-8 items-start">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-semibold">What we do</h2>
+        <p class="mt-3 text-sm opacity-80 max-w-sm">We are a usability-focused design agency. We test, design, and refine websites, apps, and brands through real user interviews and research. Our goal is to help you grow by making every interaction intuitive.</p>
+      </div>
+      <ul class="md:col-span-2 grid sm:grid-cols-2 gap-6">
+        <li class="p-6 rounded-2xl border border-black/10 dark:border-white/10 hover:shadow-sm transition"><div class="text-6xl font-serif leading-none">01</div><h3 class="mt-4 font-medium">Usability Testing</h3><p class="mt-2 text-sm opacity-80">Real interviews and testing sessions to improve user experience.</p></li>
+        <li class="p-6 rounded-2xl border border-black/10 dark:border-white/10 hover:shadow-sm transition"><div class="text-6xl font-serif leading-none">02</div><h3 class="mt-4 font-medium">Web & Software Design</h3><p class="mt-2 text-sm opacity-80">Crafting accessible and high-performing websites and applications.</p></li>
+        <li class="p-6 rounded-2xl border border-black/10 dark:border-white/10 hover:shadow-sm transition"><div class="text-6xl font-serif leading-none">03</div><h3 class="mt-4 font-medium">Branding & Marketing</h3><p class="mt-2 text-sm opacity-80">Helping your brand stand out across digital and social channels.</p></li>
+        <li class="p-6 rounded-2xl border border-black/10 dark:border-white/10 hover:shadow-sm transition"><div class="text-6xl font-serif leading-none">04</div><h3 class="mt-4 font-medium">UX Strategy</h3><p class="mt-2 text-sm opacity-80">Holistic design strategy to maximize engagement and conversion.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Process steps -->
+  <section id="process" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+    <div class="flex items-end justify-between mb-8"><h2 class="text-2xl sm:text-3xl font-semibold">How we work</h2><a class="text-sm link-underline" href="#planner">Start a project</a></div>
+    <ol class="grid md:grid-cols-4 gap-6">
+      <li class="p-6 rounded-2xl border border-black/10 dark:border-white/10"><div class="text-6xl font-serif leading-none">01</div><h3 class="mt-4 font-medium">Discover</h3><p class="mt-2 text-sm opacity-80">Stakeholder interviews, analytics review, competitive landscape.</p></li>
+      <li class="p-6 rounded-2xl border border-black/10 dark:border-white/10"><div class="text-6xl font-serif leading-none">02</div><h3 class="mt-4 font-medium">Test</h3><p class="mt-2 text-sm opacity-80">Remote & in‑person usability tests to validate key journeys.</p></li>
+      <li class="p-6 rounded-2xl border border-black/10 dark:border-white/10"><div class="text-6xl font-serif leading-none">03</div><h3 class="mt-4 font-medium">Design</h3><p class="mt-2 text-sm opacity-80">Accessible UI, motion, and content systems ready for dev.</p></li>
+      <li class="p-6 rounded-2xl border border-black/10 dark:border-white/10"><div class="text-6xl font-serif leading-none">04</div><h3 class="mt-4 font-medium">Measure</h3><p class="mt-2 text-sm opacity-80">A/B tests and dashboards to track conversion & UX health.</p></li>
+    </ol>
+  </section>
+
+  <!-- Testimonials scroller -->
+  <section class="py-16 md:py-24 border-t border-black/5 dark:border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between mb-8"><h2 class="text-2xl sm:text-3xl font-semibold">What clients say</h2><div class="text-sm opacity-80">Drag →</div></div>
+      <div class="overflow-x-auto snap-x snap-mandatory grid grid-flow-col auto-cols-[min(90%,36rem)] gap-6 px-1">
+        <blockquote class="snap-start p-6 rounded-2xl border border-black/10 dark:border-white/10"><p class="text-lg">“Braora uncovered things we never saw in our funnels. The redesign paid for itself in 10 weeks.”</p><footer class="mt-4 text-sm opacity-80">Alex Morgan — COO, Unfold Labs</footer></blockquote>
+        <blockquote class="snap-start p-6 rounded-2xl border border-black/10 dark:border-white/10"><p class="text-lg">“The usability interviews were gold. We ship faster because we argue less.”</p><footer class="mt-4 text-sm opacity-80">Jamie Lee — Marketing, City Foods</footer></blockquote>
+        <blockquote class="snap-start p-6 rounded-2xl border border-black/10 dark:border-white/10"><p class="text-lg">“Clean build, fast pages, simple CMS. Exactly what we needed.”</p><footer class="mt-4 text-sm opacity-80">Priya Patel — Founder, Studio P</footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insights / blog cards -->
+  <section id="insights" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+    <div class="flex items-end justify-between mb-8"><h2 class="text-2xl sm:text-3xl font-semibold">Insights</h2><a href="#" class="text-sm link-underline">Read all</a></div>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <article class="rounded-2xl border border-black/10 dark:border-white/10 overflow-hidden"><img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1600&auto=format&fit=crop" alt="A/B test"/><div class="p-6"><h3 class="font-medium">How to run quick usability interviews in 48 hours</h3><p class="mt-2 text-sm opacity-80">A lightweight script, consent template, and note‑taking grid.</p></div></article>
+      <article class="rounded-2xl border border-black/10 dark:border-white/10 overflow-hidden"><img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop" alt="UX research"/><div class="p-6"><h3 class="font-medium">The only 5 metrics we track for UX health</h3><p class="mt-2 text-sm opacity-80">From task success to frustration rate—what really matters.</p></div></article>
+      <article class="rounded-2xl border border-black/10 dark:border-white/10 overflow-hidden"><img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop" alt="Design system"/><div class="p-6"><h3 class="font-medium">Design systems that don’t slow teams down</h3><p class="mt-2 text-sm opacity-80">A pragmatic approach to tokens, tooling, and adoption.</p></div></article>
+    </div>
+  </section>
+
+  <!-- Awards / stats strip -->
+  <section class="py-10 border-t border-black/5 dark:border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+      <div><div class="text-3xl font-serif">12+</div><div class="text-xs opacity-70 mt-1">Years experience</div></div>
+      <div><div class="text-3xl font-serif">140</div><div class="text-xs opacity-70 mt-1">Projects shipped</div></div>
+      <div><div class="text-3xl font-serif">28</div><div class="text-xs opacity-70 mt-1">Industries</div></div>
+      <div><div class="text-3xl font-serif">4.9★</div><div class="text-xs opacity-70 mt-1">Client rating</div></div>
+    </div>
+  </section>
+
+  <!-- Planner / contact form -->
+  <section id="planner" class="py-16 md:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl p-8 md:p-10 border border-black/10 dark:border-white/10">
+        <h2 class="text-2xl sm:text-3xl font-semibold">Project planner</h2>
+        <p class="mt-2 text-sm opacity-80">Tell us about your project and we’ll come back with an approach & ballpark.</p>
+        <form class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <label class="block"><span class="text-sm">Your name</span><input class="mt-1 w-full rounded-xl border border-black/10 dark:border-white/15 bg-white/70 dark:bg-white/5 px-3 py-2" placeholder="Sam Doe" /></label>
+          <label class="block"><span class="text-sm">Email</span><input type="email" class="mt-1 w-full rounded-xl border border-black/10 dark:border-white/15 bg-white/70 dark:bg-white/5 px-3 py-2" placeholder="sam@company.com" /></label>
+          <label class="block sm:col-span-2"><span class="text-sm">What do you need?</span><select class="mt-1 w-full rounded-xl border border-black/10 dark:border-white/15 bg-white/70 dark:bg-white/5 px-3 py-2"><option>Usability testing</option><option>New website</option><option>Product UX</option><option>Brand identity</option><option>Something else</option></select></label>
+          <label class="block sm:col-span-2"><span class="text-sm">Budget (EUR)</span><input type="number" class="mt-1 w-full rounded-xl border border-black/10 dark:border-white/15 bg-white/70 dark:bg-white/5 px-3 py-2" placeholder="25000" /></label>
+          <label class="block sm:col-span-2"><span class="text-sm">Message</span><textarea rows="5" class="mt-1 w-full rounded-xl border border-black/10 dark:border-white/15 bg-white/70 dark:bg-white/5 px-3 py-2" placeholder="Timeline, goals, links…"></textarea></label>
+          <div class="sm:col-span-2 flex items-center justify-between mt-2"><label class="flex items-center gap-2 text-sm opacity-80"><input type="checkbox" class="accent-black dark:accent-white"> NDA required</label><button type="button" class="rounded-full bg-black text-white dark:bg-white dark:text-black px-5 py-2 text-sm">Send planner</button></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-black/5 dark:border-white/10">
+    <h2 class="text-2xl sm:text-3xl font-semibold">FAQs</h2>
+    <div class="mt-6 divide-y divide-black/10 dark:divide-white/10">
+      <details class="group py-4"><summary class="marker:content-none cursor-pointer flex justify-between items-center"><span class="font-medium">How long does a typical project take?</span><span class="transition group-open:rotate-45">+</span></summary><p class="mt-2 text-sm opacity-80">Discovery and testing in 2–4 weeks, design in 4–8, build in 4–10 depending on scope.</p></details>
+      <details class="group py-4"><summary class="marker:content-none cursor-pointer flex justify-between items-center"><span class="font-medium">Do you work with startups?</span><span class="transition group-open:rotate-45">+</span></summary><p class="mt-2 text-sm opacity-80">Yes. We often help early teams validate flows and ship MVPs with a pragmatic stack.</p></details>
+      <details class="group py-4"><summary class="marker:content-none cursor-pointer flex justify-between items-center"><span class="font-medium">Can you audit our existing product?</span><span class="transition group-open:rotate-45">+</span></summary><p class="mt-2 text-sm opacity-80">We run a fast UX audit covering heuristics, accessibility, analytics and user tests.</p></details>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="border-t border-black/5 dark:border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
+      <div><div class="text-lg font-semibold">Braora</div><p class="mt-2 opacity-80">A usability and design agency. We craft brands, websites, and digital experiences that simply work better.</p></div>
+      <div><div class="font-medium">Services</div><ul class="mt-2 space-y-1 opacity-80"><li><a class="hover:opacity-100" href="#">Usability Testing</a></li><li><a class="hover:opacity-100" href="#">Web & Software Design</a></li><li><a class="hover:opacity-100" href="#">Branding & Marketing</a></li><li><a class="hover:opacity-100" href="#">UX Strategy</a></li></ul></div>
+      <div><div class="font-medium">Company</div><ul class="mt-2 space-y-1 opacity-80"><li><a class="hover:opacity-100" href="#">About</a></li><li><a class="hover:opacity-100" href="#">Careers</a></li><li><a class="hover:opacity-100" href="#">Privacy</a></li></ul></div>
+      <div><div class="font-medium">Say hello</div><a class="mt-2 inline-block link-underline" href="mailto:hello@braora.com">hello@braora.com</a><div class="mt-6"><a href="#planner" class="inline-flex items-center gap-2 rounded-full border border-black/10 dark:border-white/15 px-4 py-2">Start a project <span aria-hidden>↗</span></a></div></div>
+    </div>
+    <div class="text-xs opacity-60 text-center py-6">© <span id="y"></span> Braora. Inspired by great studios like MadeByShape — built with Tailwind.</div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const root = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    const key = 'theme-preference';
+    const setTheme = t => (t === 'dark' ? root.classList.add('dark') : root.classList.remove('dark'));
+    const getPreference = () => window.localStorage.getItem(key) || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    setTheme(getPreference());
+    toggle.addEventListener('click', () => { const next = root.classList.contains('dark') ? 'light' : 'dark'; setTheme(next); window.localStorage.setItem(key, next); });
+  </script>
+</body>
+</html>
