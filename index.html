@@ -33,11 +33,24 @@
   </style>
 </head>
 <body class="bg-white text-brand dark:bg-black dark:text-white font-display">
+  <!-- Preloader -->
+  <div id="preloader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-white/70 dark:bg-black/70 backdrop-blur-sm transition-all duration-700 ease-out opacity-100 translate-y-0">
+    <lottie-player id="lottieAnim" class="block w-40 h-40 sm:w-56 sm:h-56 lg:w-72 lg:h-72"
+      src="assets/main-scene.json"
+      autoplay
+      loop="false"
+      speed="1.5"
+      background="transparent"
+      mode="normal"
+      style="aspect-ratio:1/1;">
+    </lottie-player>
+  </div>
+
   <!-- Sticky top nav -->
   <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-black/40 border-b border-black/5 dark:border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-      <a href="#" class="flex items-center">
-        <img src="assets/braora.png" alt="Braora Logo" class="h-14 w-auto" />
+      <a href="#" class="text-xl sm:text-2xl font-bold tracking-tight">
+        Braora<span class="text-orange-400">.</span>
       </a>
       <nav class="hidden md:flex gap-8 text-sm">
         <a class="opacity-80 hover:opacity-100" href="#work">Work</a>
@@ -58,38 +71,25 @@
   </header>
 
   <!-- Hero full height -->
-  <section class="relative w-full h-screen max-w-none">
-    <div class="absolute inset-0 rounded-none md:rounded-[48px] overflow-hidden shadow-xl ring-1 ring-black/10 dark:ring-white/10">
-      <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1501877008226-4fca48ee50c1?q=80&w=1600&auto=format&fit=crop">
-        <source src="https://cdn.coverr.co/videos/coverr-lights-of-the-city-8947/1080p.mp4" type="video/mp4" />
-      </video>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+  <div class="grid md:grid-cols-12 gap-8 items-end">
+    <div class="md:col-span-9">
+      <h1 class="font-serif leading-[.95] text-4xl sm:text-6xl md:text-7xl">
+        80% deines Umsatzes wird von, <span class="italic">20%</span> deiner Kunden generiert.
+      </h1>
+      <h2 class="font-serif leading-[.95] text-2xl sm:test-3xl md:text-4xl mt-5">Wir helfen dir den Rest zu <span class="italic text-red-400">eliminieren</span>.</h2>
     </div>
-    <div class="absolute left-4 sm:left-10 top-8 sm:top-14 max-w-xl">
-      <div class="bg-black/90 text-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8">
-        <div class="text-xs sm:text-sm opacity-80 mb-2">Hiya, we’re <span class="font-semibold">Braora</span> 👋</div>
-        <h1 class="font-serif leading-tight text-2xl sm:text-4xl md:text-5xl">A usability & design agency helping brands craft better digital experiences</h1>
-        <div class="mt-4 flex gap-2 sm:gap-3">
-          <a href="#work" class="inline-flex items-center gap-2 rounded-full bg-white text-black px-4 py-2 text-xs sm:text-sm">View our work <span aria-hidden>↗</span></a>
-          <a href="#about" class="inline-flex items-center gap-2 rounded-full bg-white/10 text-white border border-white/15 px-4 py-2 text-xs sm:text-sm">Meet the team <span aria-hidden>↗</span></a>
-        </div>
+    <div class="md:col-span-3 md:justify-self-end">
+      <p class="mt-6 md:mt-0 text-base/7 opacity-80 max-w-xs">
+        Finde deinen Idealkunden und optimiere deine Prozesse, um deine Effizienz zu steigern und dein Geschäft zu skalieren.
+    </p>
+      <div class="mt-6 flex gap-3">
+        <a href="#work" class="px-4 py-2 rounded-full bg-black text-white dark:bg-white dark:text-black text-sm">Kunden</a>
+        <a href="#services" class="px-4 py-2 rounded-full border border-black/10 dark:border-white/15 text-sm">Unsere Services</a>
       </div>
     </div>
-    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 text-xs sm:text-sm flex items-center gap-4 bg-black/60 text-white rounded-full px-3 py-1.5 backdrop-blur">
-      <button aria-label="Prev" class="opacity-80 hover:opacity-100">‹</button>
-      <span class="tabular-nums">01 / 10</span>
-      <button aria-label="Next" class="opacity-80 hover:opacity-100">›</button>
-    </div>
-  </section>
-
-  <!-- Clients marquee -->
-  <section aria-label="Clients" class="border-y border-black/5 dark:border-white/10 py-6 select-none">
-    <div class="overflow-hidden">
-      <div class="flex gap-16 whitespace-nowrap animate-marquee will-change-transform">
-        <div class="flex items-center gap-16 pr-16"><span class="text-sm opacity-70">Trusted by</span><span class="text-xl font-semibold">Arcadia</span><span class="text-xl font-semibold">Nimbus Health</span><span class="text-xl font-semibold">Velora</span><span class="text-xl font-semibold">Hearth</span><span class="text-xl font-semibold">OneLab</span></div>
-        <div class="flex items-center gap-16 pr-16" aria-hidden="true"><span class="text-sm opacity-70">Trusted by</span><span class="text-xl font-semibold">Arcadia</span><span class="text-xl font-semibold">Nimbus Health</span><span class="text-xl font-semibold">Velora</span><span class="text-xl font-semibold">Hearth</span><span class="text-xl font-semibold">OneLab</span></div>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
   <!-- Featured work grid -->
   <section id="work" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
@@ -208,6 +208,41 @@
     const getPreference = () => window.localStorage.getItem(key) || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     setTheme(getPreference());
     toggle.addEventListener('click', () => { const next = root.classList.contains('dark') ? 'light' : 'dark'; setTheme(next); window.localStorage.setItem(key, next); });
+  </script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script>
+    // --- Lottie preloader logic (using <lottie-player>) ---
+    (function(){
+      var pre = document.getElementById('preloader');
+      var player = document.getElementById('lottieAnim');
+      var finished = false;
+
+      function dismiss(){
+        pre.classList.add('-translate-y-full','opacity-0');
+        pre.addEventListener('transitionend', function(){ pre.style.display = 'none'; }, { once:true });
+      }
+
+      // Respect reduced-motion
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(prefersReduced){ dismiss(); return; }
+
+      // Ensure play once content is ready
+      function ensurePlay(){ try{ if(player && player.play) player.play(); }catch(_){} }
+
+      // When the animation completes, dismiss overlay
+      player?.addEventListener('complete', function(){ finished = true; dismiss(); });
+      player?.addEventListener('error', function(){ if(!finished) setTimeout(dismiss, 200); });
+      player?.addEventListener('loaded', function(){ // some builds fire 'loaded' not DOMLoaded
+        // slight delay to avoid race with first paint
+        setTimeout(ensurePlay, 50);
+      });
+
+      // As a fallback, dismiss after 2.5s even if events fail
+      setTimeout(function(){ if(!finished) dismiss(); }, 2500);
+
+      // Also nudge play on window load
+      window.addEventListener('load', ensurePlay);
+    })();
   </script>
 </body>
 </html>
