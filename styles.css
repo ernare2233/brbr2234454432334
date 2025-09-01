@@ -19,3 +19,23 @@
 .section-glow {
   background: radial-gradient(ellipse 1200px 800px at 50% calc(50% - 140px), rgba(248, 113, 113, 0.2) 0%, rgba(248, 113, 113, 0.12) 30%, rgba(248, 113, 113, 0.06) 60%, transparent 90%);
 }
+
+/* Funnel Animation Improvements */
+#funnel {
+  will-change: transform;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+}
+
+/* Outgoing Stickman Styling */
+#outgoing-stickman svg {
+  filter: drop-shadow(0 4px 8px rgba(34, 197, 94, 0.3));
+}
+
+/* Smooth transitions für reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .stickman-wrapper,
+  #outgoing-stickman {
+    transition: none !important;
+    animation: none !important;
+  }
+}
