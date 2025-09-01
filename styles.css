@@ -1,0 +1,21 @@
+.glow-background {
+  position: relative;
+  color: #f87171; /* red-400 */
+}
+
+.glow-background::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px; /* Größe des Glows */
+  height: 80px;
+  background: radial-gradient(ellipse, rgba(248, 113, 113, 0.15) 0%, rgba(248, 113, 113, 0.05) 50%, transparent 100%);
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.section-glow {
+  background: radial-gradient(ellipse 1200px 800px at 50% calc(50% - 140px), rgba(248, 113, 113, 0.2) 0%, rgba(248, 113, 113, 0.12) 30%, rgba(248, 113, 113, 0.06) 60%, transparent 90%);
+}

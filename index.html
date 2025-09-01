@@ -3,8 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
   <title>Braora — Usability & Design Agency</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -71,28 +74,40 @@
   </header>
 
   <!-- Hero full height -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-  <div class="grid md:grid-cols-12 gap-8 items-end">
-    <div class="md:col-span-9">
-      <h1 class="font-serif leading-[.95] text-4xl sm:text-6xl md:text-7xl">
+  <div class="w-full h-[100svh] section-glow">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20  h-screen flex items-start justify-center">
+      <div class="text-center mt-20 md:mt-32">
+        <h1 class="font-serif leading-[.95] text-4xl sm:text-6xl md:text-7xl">
         80% deines Umsatzes wird von, <span class="italic">20%</span> deiner Kunden generiert.
-      </h1>
-      <h2 class="font-serif leading-[.95] text-2xl sm:test-3xl md:text-4xl mt-5">Wir helfen dir den Rest zu <span class="italic text-red-400">eliminieren</span>.</h2>
-    </div>
-    <div class="md:col-span-3 md:justify-self-end">
-      <p class="mt-6 md:mt-0 text-base/7 opacity-80 max-w-xs">
-        Finde deinen Idealkunden und optimiere deine Prozesse, um deine Effizienz zu steigern und dein Geschäft zu skalieren.
-    </p>
-      <div class="mt-6 flex gap-3">
-        <a href="#work" class="px-4 py-2 rounded-full bg-black text-white dark:bg-white dark:text-black text-sm">Kunden</a>
-        <a href="#services" class="px-4 py-2 rounded-full border border-black/10 dark:border-white/15 text-sm">Unsere Services</a>
+        </h1>
+        <h2 class="font-serif leading-[.95] text-2xl sm:text-3xl md:text-4xl mt-5">
+        Wir helfen dir den Rest zu <span class="italic text-red-400">eliminieren</span>.
+        </h2>
+        <div class="relative w-full h-64 md:h-96 lg:h-[50vh] mt-8 md:mt-12 overflow-hidden">
+          <div id="stickman-container" class="absolute inset-0 z-10 flex flex-wrap justify-center items-start gap-4 md:gap-6">
+          <!-- Stickmans per JS generiert -->
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
-</section>
+
+  <div id="funnel" class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-96 translate-y-20 md:w-64 lg:w-[50rem] z-20">
+    <!-- REPLACED: Funnel SVG updated to user's new version -->
+    <svg viewBox="0 0 1205 643" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+    <path d="M20.9105 1H1184.17C1200.23 1 1209.74 18.9862 1200.7 32.2627L1092.19 191.484L985.221 348.456L884.204 496.691C880.478 502.158 874.291 505.429 867.676 505.429H833.412V623C833.412 634.046 824.458 643 813.412 643H791.066H392.588C381.542 643 372.588 634.046 372.588 623V505.429H323.642C316.881 505.429 310.579 502.013 306.887 496.35L210.484 348.456L108.164 191.484L4.15568 31.9214C-4.51612 18.6177 5.03014 1 20.9105 1Z" fill="url(#paint0_linear_15_5)"/>
+    <path d="M108.164 191.484L4.15568 31.9214C-4.51612 18.6177 5.03014 1 20.9105 1H1184.17C1200.23 1 1209.74 18.9862 1200.7 32.2627L1092.19 191.484M108.164 191.484H1092.19M108.164 191.484L210.484 348.456M1092.19 191.484L985.221 348.456M985.221 348.456L884.204 496.691C880.478 502.158 874.291 505.429 867.676 505.429H833.412M985.221 348.456H210.484M210.484 348.456L306.887 496.35C310.579 502.013 316.881 505.429 323.642 505.429H372.588M372.588 505.429V623C372.588 634.046 381.542 643 392.588 643H791.066H813.412C824.458 643 833.412 634.046 833.412 623V505.429M372.588 505.429H833.412" stroke="black"/>
+    <defs>
+    <linearGradient id="paint0_linear_15_5" x1="603" y1="1" x2="603" y2="643" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#5B8F4E"/>
+    <stop offset="1" stop-color="#72FF4E"/>
+    </linearGradient>
+    </defs>
+    </svg>
+  </div>
 
   <!-- Featured work grid -->
-  <section id="work" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+  <section id="work" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-black/5 dark:border-white/10">
     <div class="flex items-end justify-between mb-8"><h2 class="text-2xl sm:text-3xl font-semibold">Featured work</h2><a href="#" class="text-sm link-underline">View all projects</a></div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <article class="card group rounded-2xl overflow-hidden border border-black/10 dark:border-white/10"><div class="card-media relative aspect-[4/3] bg-neutral-100 dark:bg-neutral-900"><img src="https://images.unsplash.com/photo-1526481280698-8fcc13fd4be8?q=80&w=1200&auto=format&fit=crop" alt="Project cover" class="absolute inset-0 w-full h-full object-cover" /><video muted loop preload="metadata" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100" src="https://cdn.coverr.co/videos/coverr-a-city-drive-3271/1080p.mp4"></video></div><div class="p-5 sm:p-6"><div class="flex items-center justify-between"><h3 class="font-medium">City Foods</h3><span class="text-xs rounded-full border px-2 py-1 opacity-70">eCommerce</span></div><p class="mt-2 text-sm opacity-80">Replatform and redesign to scale DTC revenue.</p></div></article>
@@ -100,6 +115,8 @@
       <article class="card group rounded-2xl overflow-hidden border border-black/10 dark:border-white/10"><div class="card-media relative aspect-[4/3] bg-neutral-100 dark:bg-neutral-900"><img src="https://images.unsplash.com/photo-1496302662116-35cc4f36df92?q=80&w=1200&auto=format&fit=crop" alt="Project cover" class="absolute inset-0 w-full h-full object-cover" /><video muted loop preload="metadata" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100" src="https://cdn.coverr.co/videos/coverr-sunrise-timelapse-2004/1080p.mp4"></video></div><div class="p-5 sm:p-6"><div class="flex items-center justify-between"><h3 class="font-medium">Unfold Labs</h3><span class="text-xs rounded-full border px-2 py-1 opacity-70">SaaS</span></div><p class="mt-2 text-sm opacity-80">Brand refresh and high-contrast UI.</p></div></article>
     </div>
   </section>
+
+  
 
   <!-- What we do / services -->
   <section id="services" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-black/5 dark:border-white/10">
@@ -244,5 +261,6 @@
       window.addEventListener('load', ensurePlay);
     })();
   </script>
+  <script src="script.js"></script>
 </body>
 </html>
